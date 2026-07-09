@@ -689,8 +689,14 @@
   posthog.init("phc_zvVLc8EoSr4fd6SkeK...", {
     api_host: "https://arunachalamdesign.com/ingest",
     ui_host: "https://us.posthog.com",
-   person_profiles: "identified_only"
-})
+    person_profiles: "identified_only",
+    // Captures every console.log, console.warn, and console.error into your timeline
+    enable_recording_console_log: true,
+    // Ensures single page path updates track as fresh pageviews automatically
+    capture_pageview: "history_change",
+    // Tracks when a user leaves a tab or bounces away
+    capture_pageleave: true
+  });
 </script>
 </body>
 </html>
